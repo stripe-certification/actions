@@ -8,6 +8,12 @@ inputs:
   slack-webhook-url:
     description: 'URL for incoming webhooks to Slack channel'
     required: true
+  repo-name:
+    description: 'Name of the GitHub repo'
+    required: true
+  user-name:
+    description: 'Name of the user'
+    required: true
 outputs:
   time: # id of output
     description: 'The time we greeted you'

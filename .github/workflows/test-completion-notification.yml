@@ -7,7 +7,7 @@ jobs:
       - name: Check out repository (only needed for slack_mention_mapping_file)
         uses: actions/checkout@v2
       - name: Slack notification
-        uses: ../actions/completion-notification
+        uses: ./.github/actions/completion-notification
         with:
           slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
           repo-name: ${{ github.event.repository.name }}

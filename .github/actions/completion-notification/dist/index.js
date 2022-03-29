@@ -6,7 +6,7 @@
 
 function getPayload(user, repo) {
   const userMessage = user + " has completed a GitHub hands-on lab.";
-  const repoUrl = "https://github.com/stripe-certification" + repo;
+  const repoUrl = "https://github.com/stripe-certification/" + repo;
   const payload = {
     blocks: [
       {
@@ -43,33 +43,6 @@ function getPayload(user, repo) {
         text: {
           type: "mrkdwn",
           text: "Please react with 👀 to let teammates know you are provisioning, then complete the following steps:",
-        },
-        accessory: {
-          type: "checkboxes",
-          options: [
-            {
-              text: {
-                type: "mrkdwn",
-                text: "this is mrkdwn text",
-              },
-              value: "value-0",
-            },
-            {
-              text: {
-                type: "mrkdwn",
-                text: "this is mrkdwn text",
-              },
-              value: "value-1",
-            },
-            {
-              text: {
-                type: "mrkdwn",
-                text: "this is mrkdwn text",
-              },
-              value: "value-2",
-            },
-          ],
-          action_id: "checkboxes-action",
         },
       },
     ],

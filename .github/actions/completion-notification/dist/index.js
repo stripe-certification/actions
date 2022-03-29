@@ -27,7 +27,7 @@ function getPayload(user, repo) {
         elements: [
           {
             type: "mrkdwn",
-            text: "1. Find the learner's name & email address by searching for their GitHub username in the <https://docs.google.com/spreadsheets/d/1gF-N6joOmVm2r2V14Kn90zuRPtc3mUJRxaIJN8tLdaA/edit#gid=556597261|Intake Spreadsheet>.",
+            text: "1. Find the learner's name & email address by searching for their GitHub username in the <https://docs.google.com/spreadsheets/d/1gF-N6joOmVm2r2V14Kn90zuRPtc3mUJRxaIJN8tLdaA/edit#gid=1584607354|Intake Spreadsheet>.",
           },
           {
             type: "mrkdwn",

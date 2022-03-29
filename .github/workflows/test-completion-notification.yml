@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Slack notification
-        uses: ./.github/actions/completion-notification
+        uses: ./.github/actions/completion-notification@completion-notification
         with:
           slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
           repo-name: ${{ github.event.repository.name }}

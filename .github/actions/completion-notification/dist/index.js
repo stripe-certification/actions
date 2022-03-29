@@ -8485,9 +8485,17 @@ const authorName = core.getInput("user-name");
  */
 (async () => {
   try {
-    const payload = JSON.stringify({
-      hello: "world",
-    });
+    const payload = {
+      blocks: [
+        {
+          type: "section",
+          text: {
+            type: "mrkdwn",
+            text: "This is a simple test sent by _Quentin_. This notification should make it to #training-and-cert-ops-bots, hopefully...",
+          },
+        },
+      ],
+    };
     const result = await sendSlackNotification(payload);
     if (result !== "ok") {
       if (result === "invalid_payload") {
@@ -8504,7 +8512,7 @@ const authorName = core.getInput("user-name");
 })();
 
 function sendSlackNotification(payload) {
-  console.log("in sendSlackNotification");
+  console.log(SLACK_URL);
   return new Promise((resolve, reject) => {
     const request = https.request(
       SLACK_URL,

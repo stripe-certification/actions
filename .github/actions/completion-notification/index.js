@@ -15,7 +15,7 @@ const authorName = core.getInput("user-name");
  */
 (async () => {
   try {
-    const payload = JSON.stringify({
+    const payload = {
       blocks: [
         {
           type: "section",
@@ -25,7 +25,7 @@ const authorName = core.getInput("user-name");
           },
         },
       ],
-    });
+    };
     const result = await sendSlackNotification(payload);
     if (result !== "ok") {
       if (result === "invalid_payload") {

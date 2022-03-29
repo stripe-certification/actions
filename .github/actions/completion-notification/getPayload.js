@@ -1,82 +1,37 @@
 function getPayload(user, repo) {
-  const headerMessage = user + " has completed a GitHub hands-on lab.";
-  const repoUrl = "https://github.com/stripe-certification/" + repo;
+  const headerMessage = `*<https://github.com/stripe-certification/${repo}|${user}> has completed the Payments Challenge.*`;
   const payload = {
     blocks: [
       {
-        type: "header",
+        type: "section",
         text: {
-          type: "plain_text",
+          type: "mrkdwn",
           text: headerMessage,
-          emoji: true,
         },
       },
       {
         type: "section",
         text: {
           type: "mrkdwn",
-          text: "Visit their solution repo:",
+          text: "Please follow the steps from the Certification Runbook (link to that heading) and react with a :check: to let teammates know.  For convenience, they're summarized below.",
         },
-        accessory: {
-          type: "button",
-          text: {
-            type: "plain_text",
-            text: "GitHub Repo",
-            emoji: true,
+      },
+      {
+        type: "context",
+        elements: [
+          {
+            type: "mrkdwn",
+            text: "1. Find the learner's name & email address by searching for their GitHub username in the <https://docs.google.com/spreadsheets/d/1gF-N6joOmVm2r2V14Kn90zuRPtc3mUJRxaIJN8tLdaA/edit#gid=556597261|Intake Spreadsheet>",
           },
-          value: "click_me_123",
-          url: repoUrl,
-          action_id: "button-action",
-        },
-      },
-      {
-        type: "divider",
-      },
-      {
-        type: "section",
-        text: {
-          type: "mrkdwn",
-          text: "React with eyes to let teammates know you've taken this notification, then complete the following steps",
-        },
-        accessory: {
-          type: "checkboxes",
-          options: [
-            {
-              text: {
-                type: "mrkdwn",
-                text: "*this is mrkdwn text*",
-              },
-              description: {
-                type: "mrkdwn",
-                text: "*this is mrkdwn text*",
-              },
-              value: "value-0",
-            },
-            {
-              text: {
-                type: "mrkdwn",
-                text: "*this is mrkdwn text*",
-              },
-              description: {
-                type: "mrkdwn",
-                text: "*this is mrkdwn text*",
-              },
-              value: "value-1",
-            },
-            {
-              text: {
-                type: "mrkdwn",
-                text: "*this is mrkdwn text*",
-              },
-              description: {
-                type: "mrkdwn",
-                text: "*this is mrkdwn text*",
-              },
-              value: "value-2",
-            },
-          ],
-          action_id: "checkboxes-action",
-        },
+          {
+            type: "mrkdwn",
+            text: "2. Go to the MindTickle reviews (link these two words to admin.mindtickle.com) and mark that learner as having passed.",
+          },
+          {
+            type: "mrkdwn",
+            text: "3. Go back to the intake spreadsheet and mark their challenge as completed & submitted on today's date.",
+          },
+        ],
       },
     ],
   };

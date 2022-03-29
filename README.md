@@ -19,3 +19,15 @@ ncc build index.js -o dist
 ```
 
 Instead of running ./index.js it will run ./dist/index.js which has the packages pre-installed.
+
+## Emojis
+
+If you pass emojis into a 'text' block in the Slack Notification payload, make sure the attribute 'emoji' is set to 'true'!
+
+```json
+"text": {
+    "type": "mrkdwn",
+    "text": "This is emoji text 👍",
+    "emoji": true,
+},
+```

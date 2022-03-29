@@ -2,6 +2,8 @@ const core = require("@actions/core");
 const github = require("@actions/github");
 const https = require("https");
 
+const getPayload = require("./getPayload");
+
 const SLACK_URL = core.getInput("slack-webhook-url");
 const repositoryName = core.getInput("repo-name");
 const authorName = core.getInput("user-name");
@@ -15,18 +17,7 @@ const authorName = core.getInput("user-name");
  */
 (async () => {
   try {
-    const payload =
-      '{ \
-      "blocks": [ \
-        { \
-          "type": "section", \
-          "text": { \
-            "type": "mrkdwn", \
-            "text": "This is a simple test sent by _Quentin_. This notification should make it to #training-and-cert-ops-bots, hopefully...", \
-          }, \
-        }, \
-      ], \
-    }';
+    const payload = getPayload(authorName, repositoryName);
     const result = await sendSlackNotification(payload);
     if (result !== "ok") {
       if (result === "invalid_payload") {

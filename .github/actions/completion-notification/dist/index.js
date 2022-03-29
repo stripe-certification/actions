@@ -1,6 +1,86 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ 8741:
+/***/ ((__unused_webpack_module, __webpack_exports__, __nccwpck_require__) => {
+
+"use strict";
+__nccwpck_require__.r(__webpack_exports__);
+/* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getPayload = (user, repo) =>
+  JSON.stringify({
+    blocks: [
+      {
+        type: "header",
+        text: {
+          type: "plain_text",
+          text: user + " has completed a GitHub hands-on lab.",
+          emoji: true,
+        },
+      },
+      {
+        type: "section",
+        text: {
+          type: "mrkdwn",
+          text: "You can find their solution repo here:",
+        },
+        accessory: {
+          type: "button",
+          text: {
+            type: "plain_text",
+            text: "GitHub Repo",
+            emoji: true,
+          },
+          value: "click_me_123",
+          url: "https://github.com/stripe-certification/" + repo,
+          action_id: "button-action",
+        },
+      },
+      {
+        type: "divider",
+      },
+      {
+        type: "section",
+        text: {
+          type: "mrkdwn",
+          text: "Please react with 👀 to let teammates know you are provisioning, then complete the following steps:",
+        },
+        accessory: {
+          type: "checkboxes",
+          options: [
+            {
+              text: {
+                type: "mrkdwn",
+                text: "this is mrkdwn text",
+              },
+              value: "value-0",
+            },
+            {
+              text: {
+                type: "mrkdwn",
+                text: "this is mrkdwn text",
+              },
+              value: "value-1",
+            },
+            {
+              text: {
+                type: "mrkdwn",
+                text: "this is mrkdwn text",
+              },
+              value: "value-2",
+            },
+          ],
+          action_id: "checkboxes-action",
+        },
+      },
+    ],
+  }));
+
+
+/***/ }),
+
 /***/ 857:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
@@ -8460,6 +8540,34 @@ module.exports = JSON.parse('[[[0,44],"disallowed_STD3_valid"],[[45,46],"valid"]
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__nccwpck_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__nccwpck_require__.o(definition, key) && !__nccwpck_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__nccwpck_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__nccwpck_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/compat */
 /******/ 	
 /******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
@@ -8471,6 +8579,8 @@ var __webpack_exports__ = {};
 const core = __nccwpck_require__(9466);
 const github = __nccwpck_require__(4580);
 const https = __nccwpck_require__(5687);
+
+const getPayload = __nccwpck_require__(8741);
 
 const SLACK_URL = core.getInput("slack-webhook-url");
 const repositoryName = core.getInput("repo-name");
@@ -8485,18 +8595,7 @@ const authorName = core.getInput("user-name");
  */
 (async () => {
   try {
-    const payload =
-      '{ \
-      "blocks": [ \
-        { \
-          "type": "section", \
-          "text": { \
-            "type": "mrkdwn", \
-            "text": "This is a simple test sent by _Quentin_. This notification should make it to #training-and-cert-ops-bots, hopefully...", \
-          }, \
-        }, \
-      ], \
-    }';
+    const payload = getPayload(authorName, repositoryName);
     const result = await sendSlackNotification(payload);
     if (result !== "ok") {
       if (result === "invalid_payload") {

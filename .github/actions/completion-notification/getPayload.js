@@ -1,5 +1,5 @@
 function getPayload(user, repo) {
-  const userMessage = user + " has completed a GitHub hands-on lab.";
+  const headerMessage = user + " has completed a GitHub hands-on lab.";
   const repoUrl = "https://github.com/stripe-certification/" + repo;
   const payload = {
     blocks: [
@@ -7,7 +7,7 @@ function getPayload(user, repo) {
         type: "header",
         text: {
           type: "plain_text",
-          text: "This is a header block",
+          text: headerMessage,
           emoji: true,
         },
       },
@@ -15,16 +15,17 @@ function getPayload(user, repo) {
         type: "section",
         text: {
           type: "mrkdwn",
-          text: "This is a section block with a button.",
+          text: "Visit their solution repo:",
         },
         accessory: {
           type: "button",
           text: {
             type: "plain_text",
-            text: "Click Me",
+            text: "GitHub Repo",
             emoji: true,
           },
           value: "click_me_123",
+          url: repoUrl,
           action_id: "button-action",
         },
       },
@@ -35,7 +36,7 @@ function getPayload(user, repo) {
         type: "section",
         text: {
           type: "mrkdwn",
-          text: "This is a section block with checkboxes.",
+          text: "React with 👀 to let teammates know you've taken this notification, then complete the following steps",
         },
         accessory: {
           type: "checkboxes",

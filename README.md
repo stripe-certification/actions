@@ -19,7 +19,3 @@ ncc build index.js -o dist
 ```
 
 Instead of running ./index.js it will run ./dist/index.js which has the packages pre-installed.
-
-## Editing the Slack Payload
-
-You have to disable Prettier to edit the payload JSON because double quotes are required around the keys.

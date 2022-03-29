@@ -8470,6 +8470,7 @@ var __webpack_exports__ = {};
 (() => {
 const core = __nccwpck_require__(9466);
 const github = __nccwpck_require__(4580);
+const https = __nccwpck_require__(5687);
 
 const SLACK_URL = core.getInput("slack-webhook-url");
 const repositoryName = core.getInput("repo-name");

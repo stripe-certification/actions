@@ -1,5 +1,6 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
+const https = require("https");
 
 const SLACK_URL = core.getInput("slack-webhook-url");
 const repositoryName = core.getInput("repo-name");

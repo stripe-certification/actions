@@ -7,9 +7,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install Packages
-        run: |
-          cd ./.github/actions/completion-notification
-          npm i
+        run: npm i @actions/core @actions/github
       - name: Slack notification
         uses: stripe-certification/actions/.github/actions/completion-notification@completion-notification
         with:

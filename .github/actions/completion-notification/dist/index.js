@@ -19,7 +19,7 @@ function getPayload(user, repo) {
         type: "section",
         text: {
           type: "mrkdwn",
-          text: "Please follow the steps from the Certification Runbook (link to that heading) and react with a :check: to let teammates know.  For convenience, they're summarized below.",
+          text: "Please follow the steps from the <https://docs.google.com/document/d/1_T96D88BcCIPYBRsoW9yHXNjbMa38c_389S6HXtBPWQ/edit#heading=h.nyneao1vryxl|Certification Runbook> and react with a :check: to let teammates know.  For convenience, they're summarized below.",
         },
       },
       {

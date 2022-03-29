@@ -1,12 +1,12 @@
-# name: Test Completion Notification
-# on: [push]
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Slack notification
-#         uses: stripe-certification/actions/.github/actions/completion-notification@main
-#         with:
-#           slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
-#           repo-name: ${{ github.event.repository.name }}
-#           user-name: ${{ github.actor }}
+name: Test Completion Notification
+on: [push]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Slack notification
+        uses: stripe-certification/actions/.github/actions/completion-notification@completion-notification
+        with:
+          slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          repo-name: ${{ github.event.repository.name }}
+          user-name: ${{ github.actor }}

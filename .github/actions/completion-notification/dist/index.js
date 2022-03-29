@@ -8491,18 +8491,19 @@ const authorName = core.getInput("user-name");
     if (result !== "ok") {
       if (result === "invalid_payload") {
         core.setFailed(
-          "Could not send notification with invalid payload: " + data
+          "Could not send notification with invalid payload: " + result
         );
       } else {
         core.setFailed("Could not send notification: " + result);
       }
     }
   } catch (err) {
-    core.setFailed(error.message);
+    core.setFailed(err.message);
   }
 })();
 
 function sendSlackNotification(payload) {
+  console.log("in sendSlackNotification");
   return new Promise((resolve, reject) => {
     const request = https.request(
       SLACK_URL,

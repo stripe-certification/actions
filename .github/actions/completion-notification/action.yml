@@ -1,10 +1,6 @@
 name: 'Completion Notification'
 description: 'Notify Slack channel for Training & Cert that a learner completed the challenge.'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
   slack-webhook-url:
     description: 'URL for incoming webhooks to Slack channel'
     required: true
@@ -14,9 +10,6 @@ inputs:
   user-name:
     description: 'Name of the user'
     required: true
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
 runs:
   using: 'node16'
   main: 'index.js'

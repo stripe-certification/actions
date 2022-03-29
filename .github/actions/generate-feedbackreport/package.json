@@ -1,0 +1,36 @@
+{
+  "name": "stripe-feedbackbuilder-action",
+  "version": "1.0.0",
+  "description": "Stripe Feeback Report Generation Action",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "prepare": "ncc build index.js -o dist --source-map --license licenses.txt",
+    "test": "jest",
+    "all": "npm run lint && npm run prepare && npm run test"
+  },
+  "jest": {
+    "verbose": true,
+    "watchman": false
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pvpandya/stripe-feedbackbuilder-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pvpandya/stripe-feedbackbuilder-action.git/issues"
+  },
+  "homepage": "https://github.compvpandya/stripe-feedbackbuilder-action.git#readme",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.31.1",
+    "eslint": "^8.4.1",
+    "jest": "^27.4.4"
+  }
+}

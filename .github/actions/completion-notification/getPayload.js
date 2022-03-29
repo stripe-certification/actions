@@ -1,4 +1,4 @@
-export default getPayload = (user, repo) =>
+const getPayload = (user, repo) =>
   JSON.stringify({
     blocks: [
       {
@@ -66,3 +66,5 @@ export default getPayload = (user, repo) =>
       },
     ],
   });
+
+module.exports = getPayload;

@@ -1,0 +1,41 @@
+name: 'FeedbackBuilder'
+description: 'Structured logger, parser, and string builder built on rubricca to provide human-written feedback at machine-readable speeds'
+inputs:
+  rubricfile:  
+    description: 'Rubric File location'
+    required: true
+    default: 'rubric.json'
+  testresultfile:  
+    description: 'Test Result Log File location'
+    required: true
+    default: 'stripetestresult.json'
+  outputfolder:  
+    description: 'Output Feedback File Folder location'
+    required: true
+    default: ''
+  currentlearnerchallengestatusdetails:  
+    description: 'Input of the current learner challenge status details. JSON Structure.'
+    required: true
+    default: ''
+  skiptestlabelapplied:  
+    description: 'Boolean indicating if skip-tests label is applied.'
+    required: true
+    default: false
+outputs:
+  passtestitems:
+    description: 'List of test that Passed'
+  failedtestitems:
+    description: 'List of test that did not Passed'
+  learnerchallengestatus:
+    description: 'Learner Challenge Status indicates the test file name that needs to be executed.'
+  learnerchallengestatusdetails:
+    description: 'Learner Challenge Status details. JSON structure with all tests runs and currenct status with timestamp.'
+  challengecomplete:
+    description: 'Boolean indicator if the Challenge is complete.'
+  canAutoMergePR:
+    description: 'Boolean indicator if the PR can be auto-merged.'
+  comment:
+    description: 'User friendly Comment.'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

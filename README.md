@@ -1,6 +1,6 @@
 # actions
 
-Collection of private Actions for operating Stripe's Training &amp; Cert program.
+Collection of Actions for operating Stripe's Training &amp; Cert program.
 
 ## Building an Action
 

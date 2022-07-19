@@ -174,7 +174,7 @@
       "id": "2.6",
       "rowId": 18,
       "title": "Check Stripe Js is loaded",
-      "learner_prompt": "",
+      "learner_prompt": "Stripe JS is Loaded",
       "helptext": "Make sure Stripe.js is configured correctly.",
       "graded_assertion": "",
       "err": {},

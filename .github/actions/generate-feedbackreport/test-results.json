@@ -106,7 +106,7 @@
                   "results": [
                     {
                       "workerIndex": 0,
-                      "status": "timedOut",
+                      "status": "passed",
                       "duration": 30068,
                       "error": {
                         "message": "\u001b[31mTimeout of 30000ms exceeded.\u001b[39m"
@@ -117,7 +117,7 @@
                       "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "file": "example.spec.ts",

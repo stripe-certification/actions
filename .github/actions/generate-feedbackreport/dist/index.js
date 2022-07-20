@@ -1785,9 +1785,10 @@ async function generateFeedback(testResultFile, rubricFile, currentDetails, skip
     { 
       prComment += `### Following test did not pass. ${failedTestComments}`;
     } 
-    else 
+    
+    // now we know that there are no failures so we need to update the state variables that determine what the learner's next state is
+    if (passedTestComments !== '' && failedTestComments === '')
     {
-      // now we know that there are no failures so we need to update the state variables that determine what the learner's next state is
       canAutoMergePR = true;
       learnerNextSection = getNextSection(learnerCurrentSection, rubric.sequences);
       isChallengeComplete = getChallengeCompletion(learnerCurrentSection, rubric.sequences);

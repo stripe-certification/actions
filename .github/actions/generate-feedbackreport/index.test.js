@@ -17,10 +17,9 @@ const path = require('path');
 test('Run feedback builder action for standard inputs', () => {
   try 
   {
-    process.env['INPUT_RUBRICFILE'] = './rubric.json';
+    process.env['INPUT_RUBRICFILE'] = './rubrix.json';
     process.env['INPUT_TESTRESULTFILE'] = './test-results.json';
     process.env['INPUT_CURRENTLEARNERCHALLENGESTATUSDETAILS'] = './learner_challenge_test_details.json';
-    process.env['INPUT_SKIPTESTLABELAPPLIED'] = 'false';
     const ip = path.join(__dirname, 'index.js');
     const result = cp.execSync(`node ${ip}`, {env: process.env}).toString();
     console.log(result);
@@ -31,30 +30,3 @@ test('Run feedback builder action for standard inputs', () => {
     console.log("error", error.stdout.toString());
   }
 });
-
-/**
- * This test runs the action on the below inputs:
- * 1. Rubric File - './rubric.json'
- * 2. Current Learner Status - './learner_challenge_test_details.json
- * 3. Skip Tests Label which is set to 'true'
- * 
- * It produces the following outputs - learner-next-section, learner-status, is-challenge-complete, can-auto-merge and pr-comments
- */
-test('Run feedback builder action with skip tests label applied', () => {
-  try 
-  {
-    process.env['INPUT_RUBRICFILE'] = './rubric.json';    
-    process.env['INPUT_CURRENTLEARNERCHALLENGESTATUSDETAILS'] = './learner_challenge_test_details.json';
-    process.env['INPUT_SKIPTESTLABELAPPLIED'] = 'true';
-    const ip = path.join(__dirname, 'index.js');
-    const result = cp.execSync(`node ${ip}`, {env: process.env}).toString();
-    console.log(result);
-  } 
-  catch (error) 
-  {
-    console.log(error.message);
-    console.log("error", error.stdout.toString());
-  }
-});
-
-

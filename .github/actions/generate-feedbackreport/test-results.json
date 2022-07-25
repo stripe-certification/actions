@@ -49,24 +49,24 @@
     "webServer": null,
     "_globalOutputDir": "/Users/sandeepdutta0893/Code/stripe-repos/payments_autogen_challenge/test/test-results",
     "_configDir": "/Users/sandeepdutta0893/Code/stripe-repos/payments_autogen_challenge/test",
-    "_testGroupsCount": 10
+    "_testGroupsCount": 4
   },
   "suites": [
     {
-      "title": "example.spec.ts",
-      "file": "example.spec.ts",
+      "title": "test1.spec.ts",
+      "file": "test1.spec.ts",
       "line": 0,
       "column": 0,
       "specs": [],
       "suites": [
         {
           "title": "New Todo",
-          "file": "example.spec.ts",
+          "file": "test1.spec.ts",
           "line": 14,
           "column": 6,
           "specs": [
             {
-              "title": "should allow me to add todo items:1.3",
+              "title": "should allow me to add todo items:1.1",
               "ok": true,
               "tags": [],
               "tests": [
@@ -79,7 +79,7 @@
                     {
                       "workerIndex": 0,
                       "status": "passed",
-                      "duration": 3491,
+                      "duration": 2518,
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
@@ -89,13 +89,13 @@
                   "status": "expected"
                 }
               ],
-              "file": "example.spec.ts",
-              "line": 15,
+              "file": "test1.spec.ts",
+              "line": 16,
               "column": 3
             },
             {
-              "title": "should clear text input field when an item is added:1.4.1",
-              "ok": false,
+              "title": "should append new items to the bottom of the list:1.2",
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -107,10 +107,7 @@
                     {
                       "workerIndex": 0,
                       "status": "passed",
-                      "duration": 30068,
-                      "error": {
-                        "message": "\u001b[31mTimeout of 30000ms exceeded.\u001b[39m"
-                      },
+                      "duration": 909,
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
@@ -120,76 +117,20 @@
                   "status": "expected"
                 }
               ],
-              "file": "example.spec.ts",
-              "line": 38,
-              "column": 3
-            },
-            {
-              "title": "should append new items to the bottom of the list:1.4.2",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "status": "passed",
-                      "duration": 1665,
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "file": "example.spec.ts",
-              "line": 48,
-              "column": 3
-            },
-            {
-              "title": "should show #main and #footer when items added:1.7",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "status": "passed",
-                      "duration": 646,
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "file": "example.spec.ts",
-              "line": 62,
+              "file": "test1.spec.ts",
+              "line": 39,
               "column": 3
             }
           ]
         },
         {
           "title": "Mark all as completed",
-          "file": "example.spec.ts",
-          "line": 72,
+          "file": "test1.spec.ts",
+          "line": 55,
           "column": 6,
           "specs": [
             {
-              "title": "should allow me to mark all items as completed:2.3",
+              "title": "should allow me to mark all items as completed:1.3",
               "ok": true,
               "tags": [],
               "tests": [
@@ -200,9 +141,9 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "status": "passed",
-                      "duration": 774,
+                      "duration": 857,
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
@@ -212,12 +153,12 @@
                   "status": "expected"
                 }
               ],
-              "file": "example.spec.ts",
-              "line": 82,
+              "file": "test1.spec.ts",
+              "line": 66,
               "column": 3
             },
             {
-              "title": "should allow me to clear the complete state of all items:2.4.1",
+              "title": "should allow me to clear the complete state of all items:1.4",
               "ok": true,
               "tags": [],
               "tests": [
@@ -228,9 +169,9 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "status": "passed",
-                      "duration": 888,
+                      "duration": 1122,
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
@@ -240,128 +181,8 @@
                   "status": "expected"
                 }
               ],
-              "file": "example.spec.ts",
-              "line": 91,
-              "column": 3
-            },
-            {
-              "title": "complete all checkbox should update state when items are completed / cleared:2.4.2",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "status": "passed",
-                      "duration": 1025,
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "file": "example.spec.ts",
-              "line": 100,
-              "column": 3
-            }
-          ]
-        },
-        {
-          "title": "Item",
-          "file": "example.spec.ts",
-          "line": 121,
-          "column": 6,
-          "specs": [
-            {
-              "title": "should allow me to mark items as complete:2.6",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "status": "passed",
-                      "duration": 864,
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "file": "example.spec.ts",
-              "line": 123,
-              "column": 3
-            },
-            {
-              "title": "should allow me to un-mark items as complete:2.7",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "status": "passed",
-                      "duration": 903,
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "file": "example.spec.ts",
-              "line": 145,
-              "column": 3
-            },
-            {
-              "title": "should allow me to edit an item:2.8",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "status": "passed",
-                      "duration": 881,
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "file": "example.spec.ts",
-              "line": 165,
+              "file": "test1.spec.ts",
+              "line": 75,
               "column": 3
             }
           ]

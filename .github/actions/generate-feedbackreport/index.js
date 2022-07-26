@@ -25,8 +25,8 @@ import {
     let learnerNextSection, 
         learnerChallengeStatus, 
         isChallengeComplete, 
-        canAutoMergePR, 
-        prComment,
+        isMilestoneComplete, 
+        prComments,
         // this variable is an output of the action and will be used in the challenge test workflow to stop processing the next steps and fail the action
         areFilesMissing = false;
 
@@ -40,8 +40,8 @@ import {
         learnerNextSection, 
         learnerChallengeStatus, 
         isChallengeComplete, 
-        canAutoMergePR, 
-        prComment
+        isMilestoneComplete, 
+        prComments
       } = generateFilesMissingFeedback(
         isRubricPresent,
         isLearnerStatusPresent,
@@ -54,8 +54,8 @@ import {
         learnerNextSection, 
         learnerChallengeStatus, 
         isChallengeComplete, 
-        canAutoMergePR, 
-        prComment
+        isMilestoneComplete, 
+        prComments
       } = await generateFeedback(
         testResultFile, 
         rubricFile, 
@@ -66,8 +66,8 @@ import {
     core.setOutput('learner-next-section', learnerNextSection);
     core.setOutput('learner-status', learnerChallengeStatus);
     core.setOutput('is-challenge-complete', isChallengeComplete);
-    core.setOutput('can-auto-merge', canAutoMergePR);
-    core.setOutput('pr-comments', prComment);
+    core.setOutput('can-auto-merge', isMilestoneComplete);
+    core.setOutput('pr-comments', prComments);
     core.setOutput('are-files-missing', areFilesMissing);
   } 
   catch (error) 

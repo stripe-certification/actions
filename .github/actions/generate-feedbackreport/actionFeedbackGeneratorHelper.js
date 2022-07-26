@@ -87,30 +87,30 @@ export const generateFilesMissingFeedback = (isRubricPresent, isLearnerStatusPre
     let learnerNextSection = null, 
         learnerChallengeStatus = null, 
         isChallengeComplete = false, 
-        canAutoMergePR = false, 
-        prComment = '';
+        isMilestoneComplete = false, 
+        prComments = '';
 
     if (!isRubricPresent)
     {
-        prComment = prComment.concat('This action expects a rubric file at `test/cypress/results/rubric.json`.  Please verify that the file is present and hasn\'t been modified from its original correct state.');
+        prComments = prComments.concat('This action expects a rubric file at `test/cypress/results/rubric.json`.  Please verify that the file is present and hasn\'t been modified from its original correct state.');
     }
 
     if (!isLearnerStatusPresent)
     {
-        prComment = prComment.concat('This action needs the learner details JSON file to run. Please ensure that this file is present.');
+        prComments = prComments.concat('This action needs the learner details JSON file to run. Please ensure that this file is present.');
     }
 
     if (!isTestResultPresent)
     {
-        prComment = prComment.concat('We could not find a test result file to build feedback. This file was generated successfully in the original application. \n Please revert your changes until you have restored the successful feedback loop, then re-apply them one-by-one to determine what caused the test suite to fail.');
+        prComments = prComments.concat('We could not find a test result file to build feedback. This file was generated successfully in the original application. \n Please revert your changes until you have restored the successful feedback loop, then re-apply them one-by-one to determine what caused the test suite to fail.');
     }
     
     return {
         learnerNextSection, 
         learnerChallengeStatus, 
         isChallengeComplete, 
-        canAutoMergePR, 
-        prComment
+        isMilestoneComplete, 
+        prComments
     };
 }
   
